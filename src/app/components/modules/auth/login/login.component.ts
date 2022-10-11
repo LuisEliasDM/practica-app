@@ -18,7 +18,6 @@ export class LoginComponent implements OnInit {
   }
 
   onLogin(): void{
-    console.log("onLogin");
     this.apiService.login(this.username, this.password).subscribe({
       next: (response: any) => {
         StorageHelper.setItem("session", response)
