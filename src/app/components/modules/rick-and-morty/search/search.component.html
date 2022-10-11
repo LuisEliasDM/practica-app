@@ -1,0 +1,20 @@
+<div class="container m-3">
+    <label for="" class="form-label">Character</label>
+    <div class="input-group mb-3">
+        <input type="text" class="form-control" [(ngModel)]="search">
+        <button class="btn btn-primary" (click)="onSearch()">Search</button>
+    </div>
+
+    <div class="container" *ngIf="character$ | async as character">
+        <div class="row">
+            <div class="col-md-2 mb-3" *ngFor="let personaje of character.results" >
+                <div class="card h-100" >
+                    <img [src]="personaje.image" class="card-img-top" alt="...">
+                    <div class="card-body">
+                      <h5 class="card-title">{{personaje.name}}</h5>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
